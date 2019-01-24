@@ -1,0 +1,27 @@
+<%= simple_form_for @recipe do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="errors">
+      <p>
+        <%= @recipe.errors.count %>
+      </p>
+      <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="panel-body">
+      <%= f.input :title, input_html: { class: 'form-control'} %>
+      <%= f.input :description, input_html: { class: 'form-control'} %>
+      <%= f.input :image, input_html: { class: 'form-control'} %>
+      <%= f.input :ingredients, input_html: { class: 'form-control'} %>
+      <%= f.input :directions, input_html: { class: 'form-control'} %>
+
+  </div>
+        <%= f.collection_select :category_id, Category.all, :id, :title %>
+        <% end %>
+      <div class="form-actions">
+<%= f.button :submit, class: "btn btn-primary" %>
+    </div>
