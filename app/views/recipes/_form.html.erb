@@ -20,8 +20,8 @@
       <%= f.input :directions, input_html: { class: 'form-control'} %>
 
   </div>
-        <%= f.collection_select :category_id, Category.all, :id, :title %>
-        <% end %>
+      <%= f.collection_select :category_id, Category.all, :id, :title %>
+      <% end %>
       <div class="form-actions">
-<%= f.button :submit, class: "btn btn-primary" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
     </div>
